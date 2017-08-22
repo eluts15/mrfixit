@@ -17,13 +17,15 @@
                 url: '/Jobs/Claim', // Controller Action
                 success: function (result) {
                     $("#show-on-sucess").html(result);
+                    $("#claim-button").hide();
+                    $("#senpaiPls").hide();
                 }
             });
         });
     });
 </script>
 
-<h2>Would you like to do this job?</h2>
+<h2 id="senpaiPls">Would you like to do this job?</h2>
 <hr />
 
   <form id="claim">
@@ -33,13 +35,6 @@
 
     <input type="button" id="claim-button" value="Claim This Job" />
   </form> 
-
-    <h4>@Model.Title</h4>
-
-   
-   
-
-
 
 <div id="show-on-sucess"></div><!--Populate this div.-->
 
