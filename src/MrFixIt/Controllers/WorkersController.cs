@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using MrFixIt.Models;
 using Microsoft.EntityFrameworkCore;
-
-// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace MrFixIt.Controllers
 {
@@ -16,7 +11,7 @@ namespace MrFixIt.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            var thisWorker = db.Workers.Include(i =>i.Jobs).FirstOrDefault(i => i.UserName == User.Identity.Name);
+            var thisWorker = db.Workers.Include(worker =>worker.Jobs).FirstOrDefault(worker => worker.UserName == User.Identity.Name);
             if (thisWorker != null)
             {
                 return View(thisWorker);
@@ -41,5 +36,7 @@ namespace MrFixIt.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+       
     }
 }

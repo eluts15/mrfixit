@@ -4199,7 +4199,7 @@
     "Microsoft.Extensions.Primitives/1.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-GhQG5CBUR9/czBLTblt1giKBkfvHVDeppWd6KIgPyexrspECqzzSW5IXe0STTTs2NlUp9vIFwjSWG8O9c74R9g=="
+      "sha512": "sha512-09R65tZSm8T6pLHM31NZRxb8/aXyyAxuq2xYZ3YGQqKFdVpXJKRaSDonwK5aksHC1mO20pViH6MYosHQbKJMcA=="
     },
     "Microsoft.Extensions.WebEncoders/1.0.0": {
       "type": "package",
@@ -4444,7 +4444,7 @@
     "System.ComponentModel/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-VyGn1jGRZVfxnh8EdvDCi71v3bMXrsu8aYJOwoV7SNDLVhiEqwP86pPMyRGsDsxhXAm2b3o9OIqeETfN5qfezw=="
+      "sha512": "sha512-RZVzzN+Kj8OYUWah8uQWe269mkSvVASnIazkOfOCM3OGEE9PCm/qAoaReDTfyiVaiUCwC6G7cs2bB+Q1Z6jGQw=="
     },
     "System.ComponentModel.Primitives/4.1.0": {
       "type": "package",
@@ -4574,7 +4574,7 @@
     "System.Net.WebSockets/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-u6fFNY5q4T8KerUAVbya7bR6b7muBuSTAersyrihkcmE5QhEOiH3t5rh4il15SexbVlpXFHGuMwr/m8fDrnkQg=="
+      "sha512": "sha512-Ghbs9iMq/LF8nnAcoa8Ju+eUEdlte1onAyQU+YUPIGeKv04N3mlV59l6tee8Y7EtJgUJLaQzhpiFB4yPuARmeQ=="
     },
     "System.ObjectModel/4.3.0": {
       "type": "package",
@@ -4634,7 +4634,7 @@
     "System.Runtime.CompilerServices.Unsafe/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-rcnXA1U9W3QUtMSGoyoNHH6w4V5Rxa/EKXmzpORUYlDAlDB34hIQoU57ATXl8xHa83VvzRm6PcElEizgUd7U5w=="
+      "sha512": "sha512-LABxlzd0QGJY7MIRwRR6bhxgg8ZDqaMOfBSWk8nMEzFPDKG0+v7d//QdIbC/Nz36ABTynszrDHDWIPzHewTkaw=="
     },
     "System.Runtime.Extensions/4.3.0": {
       "type": "package",
@@ -4679,7 +4679,7 @@
     "System.Security.Claims/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-P/+BR/2lnc4PNDHt/TPBAWHVMLMRHsyYZbU1NphW4HIWzCggz8mJbTQQ3MKljFE7LS3WagmVFuBgoLcFzYXlkA=="
+      "sha512": "sha512-7nUVeujH8rjvxf+easGnOkBoSMwe7QSCHI74EZ4ZSLchNGlxgA8S4iy6qTBZOHkjCP0iwj+tZDLzDFO9oCCoQQ=="
     },
     "System.Security.Cryptography.Algorithms/4.3.0": {
       "type": "package",
@@ -4719,7 +4719,7 @@
     "System.Security.Principal/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-I1tkfQlAoMM2URscUtpcRo/hX0jinXx6a/KUtEQoz3owaYwl3qwsO8cbzYVVnjxrzxjHo3nJC+62uolgeGIS9A=="
+      "sha512": "sha512-DxXBlQKMHE/Q0MLiuICRMHnnoTipxATqMPkBBO0zzAQdlMZrUYmcab/ffvr2YiFqh2eI5MjZd1ZsJ7XgIZgo+A=="
     },
     "System.Text.Encoding/4.3.0": {
       "type": "package",
@@ -4734,7 +4734,7 @@
     "System.Text.Encodings.Web/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ilLTKoirqw+Mbt+6x1MOxZKEwflasdP5WNuo5m5rKSXtAqazlEDqdyBH1XbvENuDQUtKNeP48CI1dyDNlEAeOA=="
+      "sha512": "sha512-M7qXV7RmtPpot1PKRMivJnmAXQK0ftKcHGsSj54ZBgms0xtXzykLaLmbXk3ubzxBruhqHg9yWSEVU0ujreuC/Q=="
     },
     "System.Text.RegularExpressions/4.3.0": {
       "type": "package",

@@ -1,7 +1,5 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
@@ -9,11 +7,11 @@
 {
 
     <div class="text-center">
-        <h4>Hello Worker @Model.FirstName @Model.LastName. You are Logged In</h4>
+        <h4>Hello @Model.FirstName @Model.LastName. You are Logged In</h4>
         <h3>Your Current Jobs:</h3>
-        @foreach (var Job in Model.Jobs)
+        @foreach (var job in Model.Jobs)
         {
-            <h5>@Job.Title</h5>
+            <h5>@job.Title</h5>
 
         }
         @if (Model.Avaliable)
@@ -25,4 +23,6 @@
             <p>You are already assigned to a job.</p>
         }
     </div>
+
+    
 }

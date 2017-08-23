@@ -1,19 +1,46 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 @model MrFixIt.Models.Job
+
+
+<script type="text/javascript">
+    $(function () {
+        $("#claim-button").click(function () {
+
+            var data = $("#claim").serialize();
+
+            $.ajax({
+                type: 'POST', // Get something from the server.
+                data: data,
+                url: '/Jobs/Claim', // Controller Action
+                success: function (result) {
+                    $("#show-on-sucess").html(result);
+                }
+            });
+        });
+    });
+</script>
 
 <h2>Would you like to do this job?</h2>
 <hr />
-@using (Html.BeginForm())
-{
+
+  <form id="claim">
     @Html.HiddenFor(model => model.JobId)
     @Html.HiddenFor(model => model.Title)
     @Html.HiddenFor(model => model.Description)
 
+    <input type="button" id="claim-button" value="Claim This Job" />
+  </form> 
+
     <h4>@Model.Title</h4>
-    <input type="submit" value="Claim This Job" />
-}
+
+   
+   
+
+
+
+<div id="show-on-sucess"></div><!--Populate this div.-->
+
 <p>@Html.ActionLink("Back to list", "Index")</p>

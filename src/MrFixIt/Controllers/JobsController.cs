@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using MrFixIt.Models;
 using Microsoft.EntityFrameworkCore;
-
-// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace MrFixIt.Controllers
 {
@@ -17,7 +12,7 @@ namespace MrFixIt.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View(db.Jobs.Include(i => i.Worker).ToList());
+            return View(db.Jobs.Include(job => job.Worker).ToList());
         }
 
         public IActionResult Create()
@@ -30,19 +25,29 @@ namespace MrFixIt.Controllers
         {
             db.Jobs.Add(job);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index"); // After a user creates a job, return to the Index page.
         }
 
+
+
+
+
+
+
+
+
+
+        // Start Here.
         public IActionResult Claim(int id)
         {
-            var thisItem = db.Jobs.FirstOrDefault(items => items.JobId == id);
-            return View(thisItem);
+            var thisJob = db.Jobs.FirstOrDefault(job => job.JobId == id);
+            return View(thisJob); // Claim the job with this id.
         }
 
         [HttpPost]
         public IActionResult Claim(Job job)
         {
-            job.Worker = db.Workers.FirstOrDefault(i => i.UserName == User.Identity.Name);
+            job.Worker = db.Workers.FirstOrDefault(worker => worker.UserName == User.Identity.Name); // In the database, the worker who is signed in is assigned this job.
             db.Entry(job).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");

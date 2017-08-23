@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace MrFixIt.Models
 {
@@ -18,7 +15,7 @@ namespace MrFixIt.Models
 
         public Worker FindWorker(string UserName)
         {
-            Worker thisWorker = new MrFixItContext().Workers.FirstOrDefault(i => i.UserName == UserName);
+            Worker thisWorker = new MrFixItContext().Workers.FirstOrDefault(worker => worker.UserName == UserName);
             return thisWorker;
         }
     }
