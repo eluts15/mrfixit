@@ -31,7 +31,7 @@ namespace MrFixIt.Controllers
         // Start Here.
         public IActionResult Claim(int id)
         {
-            var thisJob = db.Jobs.FirstOrDefault(job => job.JobId == id);
+            Job thisJob = db.Jobs.FirstOrDefault(job => job.JobId == id);
             return View(thisJob); // Claim the job with this id.
         }
 
@@ -45,9 +45,9 @@ namespace MrFixIt.Controllers
         }
 
         [HttpPost]
-        public IActionResult Pending(int id)
+        public IActionResult Pending(int JobId)
         {
-            Job job = db.Jobs.FirstOrDefault(j => j.JobId == id);
+            Job job = db.Jobs.FirstOrDefault(j => j.JobId == JobId);
             job.Completed = false;
             job.Pending = true;
             db.Entry(job).State = EntityState.Modified;
@@ -56,9 +56,9 @@ namespace MrFixIt.Controllers
         }
 
         [HttpPost]
-        public IActionResult Completed(int id)
+        public IActionResult Completed(int JobId)
         {
-            Job job = db.Jobs.FirstOrDefault(j => j.JobId == id);
+            Job job = db.Jobs.FirstOrDefault(j => j.JobId == JobId);
             job.Completed = true;
             job.Pending = false;
             db.Entry(job).State = EntityState.Modified;

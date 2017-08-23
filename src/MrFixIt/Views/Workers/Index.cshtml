@@ -6,7 +6,7 @@
 
             $.ajax({
                 type: 'POST',
-                url: '/Jobs/Complete',
+                url: '/Jobs/Completed',
                 data: $(this).serialize(),
                 success: function () {
                     window.location.reload();
@@ -33,7 +33,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@Model.Jobs
 
 
 @if (User.Identity.IsAuthenticated)
@@ -41,6 +40,7 @@
 
     <div class="text-center">
         <h4>Hello @Model.FirstName @Model.LastName. You are Logged In</h4>
+
         <h3>Your Current Jobs:</h3>
         @foreach (var job in Model.Jobs)
         {
@@ -56,7 +56,7 @@
                 <p>Job is currently Pending.</p>
             }
 
-            @if (job.Completed == false)
+            @if (@job.Completed == false)
             {
                 <form class="Complete">
                     <input type="hidden" value="@job.JobId" name="JobId" />
