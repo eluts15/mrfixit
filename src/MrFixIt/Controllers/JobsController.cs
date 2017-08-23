@@ -28,15 +28,6 @@ namespace MrFixIt.Controllers
             return RedirectToAction("Index"); // After a user creates a job, return to the Index page.
         }
 
-
-
-
-
-
-
-
-
-
         // Start Here.
         public IActionResult Claim(int id)
         {
@@ -51,6 +42,28 @@ namespace MrFixIt.Controllers
             db.Entry(job).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult Pending(int id)
+        {
+            Job job = db.Jobs.FirstOrDefault(j => j.JobId == id);
+            job.Completed = false;
+            job.Pending = true;
+            db.Entry(job).State = EntityState.Modified;
+            db.SaveChanges();
+            return Json(job);
+        }
+
+        [HttpPost]
+        public IActionResult Completed(int id)
+        {
+            Job job = db.Jobs.FirstOrDefault(j => j.JobId == id);
+            job.Completed = true;
+            job.Pending = false;
+            db.Entry(job).State = EntityState.Modified;
+            db.SaveChanges();
+            return Json(job);
         }
     }
 }

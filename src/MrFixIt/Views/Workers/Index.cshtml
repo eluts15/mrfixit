@@ -1,6 +1,39 @@
-﻿@{
+﻿<!--move scripts to folder-->
+<script type="text/javascript">
+    $(function () {
+        $(".Complete").submit(function (e) {
+            e.preventDefault();
+
+            $.ajax({
+                type: 'POST',
+                url: '/Jobs/Complete',
+                data: $(this).serialize(),
+                success: function () {
+                    window.location.reload();
+                }
+            });
+        });
+
+        $(".Pending").submit(function (e) {
+            e.preventDefault();
+
+            $.ajax({
+                type: 'POST',
+                url: '/Jobs/Pending',
+                data: $(this).serialize(),
+                success: function () {
+                    window.location.reload();
+                }
+            });
+        });
+    });
+</script>
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+@Model.Jobs
 
 
 @if (User.Identity.IsAuthenticated)
@@ -11,7 +44,31 @@
         <h3>Your Current Jobs:</h3>
         @foreach (var job in Model.Jobs)
         {
+
             <h5>@job.Title</h5>
+            @if (@job.Completed == true)
+            {
+                <p>Job complete.</p>
+            }
+
+            else if (@job.Pending == true)
+            {
+                <p>Job is currently Pending.</p>
+            }
+
+            @if (job.Completed == false)
+            {
+                <form class="Complete">
+                    <input type="hidden" value="@job.JobId" name="JobId" />
+                    <button type="submit">Completed</button>
+                </form>
+
+                <form class="Pending">
+                    <input type="hidden" value="@job.JobId" name="JobId" />
+                    <button type="submit">In Progress</button>
+                </form>
+            }
+
 
         }
         @if (Model.Avaliable)
@@ -24,5 +81,7 @@
         }
     </div>
 
-    
+
+
+
 }

@@ -12,9 +12,9 @@
             var data = $("#claim").serialize();
 
             $.ajax({
-                type: 'POST', // Get something from the server.
+                type: 'POST', 
                 data: data,
-                url: '/Jobs/Claim', // Controller Action
+                url: '/Jobs/Claim',
                 success: function (result) {
                     $("#show-on-sucess").html(result);
                     $("#claim-button").hide();

@@ -16,7 +16,6 @@
             <li>@job.Description</li>
         </ul>
 
-        <!--This is all shit.-->
 
         @if (job.Worker == null) // Display this element if there is no woker associated with this job.
         {
@@ -26,6 +25,7 @@
         {
             <div>This Job is claimed by @job.Worker.FirstName @job.Worker.LastName</div>
         }
+
     </div>
 
 
